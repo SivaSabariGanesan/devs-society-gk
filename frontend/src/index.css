@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 270 95% 65%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 270 95% 65%;
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  font-family: 'Poppins', sans-serif;
+  background-color: #000000 !important;
+}
+
+#root {
+  background-color: #000000;
+  min-height: 100vh;
+}
+
+.App {
+  background-color: #000000;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Typography utilities */
+.font-techie {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, #0dcaf0, #ff00ff, #00ff99);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced Glitch text effect */
+.glitch-text {
+  position: relative;
+  animation: glitch 5s infinite;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 255, 0.75), -0.05em -0.025em 0 rgba(0, 255, 153, 0.75), -0.025em 0.05em 0
+      rgba(13, 202, 240, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 255, 0.75), -0.05em -0.025em 0 rgba(0, 255, 153, 0.75), -0.025em 0.05em 0
+      rgba(13, 202, 240, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 255, 0.75), 0.025em 0.025em 0 rgba(0, 255, 153, 0.75), -0.05em -0.05em
+      0 rgba(13, 202, 240, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 255, 0.75), 0.025em 0.025em 0 rgba(0, 255, 153, 0.75), -0.05em -0.05em
+      0 rgba(13, 202, 240, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 255, 0.75), 0.05em 0 0 rgba(0, 255, 153, 0.75), 0 -0.05em 0
+      rgba(13, 202, 240, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 255, 0.75), 0.05em 0 0 rgba(0, 255, 153, 0.75), 0 -0.05em 0
+      rgba(13, 202, 240, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 255, 0.75), -0.025em -0.025em 0 rgba(0, 255, 153, 0.75), -0.025em -0.05em 0
+      rgba(13, 202, 240, 0.75);
+  }
+}
+
+/* Glitch line effect */
+.glitch-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: white;
+  animation: glitch-line 4s infinite;
+  opacity: 0;
+}
+
+@keyframes glitch-line {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  2% {
+    top: 30%;
+    opacity: 1;
+  }
+  3% {
+    top: 70%;
+    opacity: 0;
+  }
+  4% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  6% {
+    opacity: 0;
+  }
+  7% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 0;
+  }
+  9% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Enhanced Glow effects */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(13, 202, 240, 0.5), 0 0 40px rgba(13, 202, 240, 0.3), 0 0 60px rgba(13, 202, 240, 0.1);
+}
+
+.glow-fuchsia {
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 0, 255, 0.3), 0 0 60px rgba(255, 0, 255, 0.1);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.5), 0 0 40px rgba(0, 255, 153, 0.3), 0 0 60px rgba(0, 255, 153, 0.1);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(168, 85, 247, 0.3), 0 0 60px rgba(168, 85, 247, 0.1);
+}
+
+/* Glitch wrapper */
+.glitch-wrapper {
+  position: relative;
+  animation: glitch-skew 1s infinite alternate-reverse;
+}
+
+@keyframes glitch-skew {
+  0% {
+    transform: skew(0deg);
+  }
+  10% {
+    transform: skew(0deg);
+  }
+  11% {
+    transform: skew(5deg);
+  }
+  12% {
+    transform: skew(0deg);
+  }
+  20% {
+    transform: skew(0deg);
+  }
+  21% {
+    transform: skew(-5deg);
+  }
+  22% {
+    transform: skew(0deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+/* Enhanced card styles */
+.card-gradient {
+  background: linear-gradient(135deg, rgba(13, 202, 240, 0.1) 0%, rgba(255, 0, 255, 0.1) 50%, rgba(0, 255, 153, 0.1) 100%);
+  border: 1px solid rgba(13, 202, 240, 0.3);
+}
+
+.card-gradient:hover {
+  background: linear-gradient(135deg, rgba(13, 202, 240, 0.2) 0%, rgba(255, 0, 255, 0.2) 50%, rgba(0, 255, 153, 0.2) 100%);
+  border: 1px solid rgba(13, 202, 240, 0.5);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Backdrop blur utilities */
+.backdrop-glass {
+  backdrop-filter: blur(16px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #0dcaf0, #ff00ff);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff00ff, #00ff99);
+}
+
+/* Enhanced form styles */
+.form-field {
+  @apply bg-black/30 border border-gray-700 px-4 py-3 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 focus:outline-none transition-all duration-200;
+  border-radius: 0.5rem !important;
+}
+
+/* Ensure all input fields have rounded corners */
+input[type="text"],
+input[type="email"], 
+input[type="tel"],
+input[type="password"],
+select {
+  border-radius: 0.5rem !important;
+}
+
+.form-field:focus {
+  background: rgba(13, 202, 240, 0.05);
+}
+
+/* Button hover effects */
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(13, 202, 240, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Animation utilities */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(13, 202, 240, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(13, 202, 240, 0.8), 0 0 30px rgba(255, 0, 255, 0.4);
+  }
+}
+
+/* Admin Dashboard Utilities */
+.text-gold-300 {
+  color: rgb(253, 224, 71);
+}
+
+.text-gold-400 {
+  color: rgb(251, 191, 36);
+}
+
+.bg-gold-500\/20 {
+  background-color: rgba(251, 191, 36, 0.2);
+}
+
+/* Role-based color utilities */
+.border-gradient-cyber {
+  border: 1px solid rgba(13, 202, 240, 0.5);
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(13, 202, 240, 0.1) 0%, rgba(255, 0, 255, 0.1) 50%, rgba(0, 255, 153, 0.1) 100%);
+}
